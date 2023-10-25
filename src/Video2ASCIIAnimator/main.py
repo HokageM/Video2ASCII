@@ -50,13 +50,14 @@ def parse_args(args):
     Returns:
       :obj:`argparse.Namespace`: command line parameters namespace
     """
-    parser = argparse.ArgumentParser(description="Just a Fibonacci demonstration")
+    parser = argparse.ArgumentParser(description="Transforms a video to an ASCII animation inside your console.")
     parser.add_argument(
         "--version",
         action="version",
         version=f"Test {__version__}",
     )
-    parser.add_argument('video', metavar='FILE', type=str, help='an integer for the accumulator')
+    parser.add_argument('video', metavar='FILE', type=str, help='mp4 that should be transformed')
+    parser.add_argument('-w', '--width', type=int, default=100, help='defines the width of the ASCII art')
     return parser.parse_args(args)
 
 
@@ -75,7 +76,7 @@ def main(args):
     video_processor = VideoProcessor(args.video)
     video_processor.extract_frames_from_video()
 
-    transformer = ASCIITransformer()
+    transformer = ASCIITransformer(args.width)
     transformer.convert_directory_to_ascii(video_processor.get_frame_dir())
 
     with Animator(transformer.get_ascii_dir()) as animator:

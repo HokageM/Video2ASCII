@@ -1,11 +1,13 @@
 import PIL.Image
 import os
 
+
 class ASCIITransformer:
 
-    def __init__(self):
+    def __init__(self, width):
         self.ascii_chars = ["@", "J", "D", "%", "*", "P", "+", "Y", "$", ",", "."]
         self.ascii_dir = None
+        self.width = width
 
     def __enter__(self):
         return self
@@ -24,9 +26,8 @@ class ASCIITransformer:
 
         width, height = img.size
         aspect_ratio = height / width
-        new_width = 500
-        new_height = aspect_ratio * new_width * 0.55
-        img = img.resize((new_width, int(new_height)))
+        new_height = aspect_ratio * self.width * 0.55
+        img = img.resize((self.width, int(new_height)))
 
         img = img.convert('L')
 
@@ -35,7 +36,7 @@ class ASCIITransformer:
         new_pixels = ''.join(new_pixels)
 
         new_pixels_count = len(new_pixels)
-        ascii_image = [new_pixels[index:index + new_width] for index in range(0, new_pixels_count, new_width)]
+        ascii_image = [new_pixels[index:index + self.width] for index in range(0, new_pixels_count, self.width)]
         ascii_image = "\n".join(ascii_image)
 
         self.ascii_dir = directory + "_ascii"
