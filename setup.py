@@ -1,5 +1,5 @@
 """
-    Setup file for Video2ASCIIAnimator.
+    Setup file for Video2ASCII.
     Use setup.cfg to configure your project.
 
     This file was generated with PyScaffold 4.5.

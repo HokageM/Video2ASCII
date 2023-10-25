@@ -1,5 +1,5 @@
 """
-    Dummy conftest.py for Video2ASCIIAnimator.
+    Dummy conftest.py for Video2ASCII.
 
     If you don't know what this is for, just leave it empty.
     Read more about conftest.py under:
