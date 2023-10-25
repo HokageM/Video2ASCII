@@ -14,6 +14,7 @@ __pycache__/*
 */.ipynb_checkpoints/*
 .DS_Store
 
+dist
 venv
 build
 src/Video2ASCIIAnimator.egg-info
