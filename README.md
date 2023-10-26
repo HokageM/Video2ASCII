@@ -1,4 +1,4 @@
-# Video2ASCIIAnimator
+# Video2ASCII
 This tool is created to convert MP4 videos into ASCII animations.
 
 ## Installation
