@@ -1,7 +1,7 @@
 import argparse
 import sys
 
-from Video2ASCIIAnimator import __version__
+from Video2ASCII import __version__
 
 from .Animator import Animator
 from .ASCIITransformer import ASCIITransformer
