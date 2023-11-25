@@ -1,4 +1,7 @@
 # Video2ASCII
+
+<img src="logo/Video2ASCII.png" width="200">
+
 This tool is created to convert MP4 videos into ASCII animations.
 
 ## Installation
