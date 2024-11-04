@@ -34,7 +34,7 @@ class Animator:
         """
         for filename in sorted(os.listdir(self.directory)):
             self.print_ascii_frame(filename)
-            time.sleep(0.05)
+            time.sleep(0.0167)
 
     @staticmethod
     def clear_terminal():
