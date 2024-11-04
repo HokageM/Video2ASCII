@@ -31,8 +31,8 @@ def parse_args(args):
     parser.add_argument('video', metavar='FILE', type=str, help='MP4 that should be transformed.')
     parser.add_argument('-w', '--width', type=int, default=250,
                         help='Defines the width of the ASCII art. Default value is set to 250.')
-    parser.add_argument('-p', '--play', type=str, default='',  help='Enter name of previously created '
-                                                                    'ASCII art frames, then it plays the animation.')
+    parser.add_argument('-p', '--play', action="store_true", help='Play the previously created ASCII art '
+                                                                  'frames from a directory derived from FILE.')
     return parser.parse_args(args)
 
 
@@ -47,7 +47,7 @@ def main(args):
 
         play_dir = transformer.get_ascii_dir()
     else:
-        play_dir = args.play
+        play_dir = f"{args.video}_frames_ascii"
     with Animator(play_dir) as animator:
         animator.run_ascii_animation()
 
